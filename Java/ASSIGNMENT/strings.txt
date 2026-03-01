@@ -1,0 +1,120 @@
+A - Reverse string
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        char[] arr = s.toCharArray();
+        int l=0;
+        int r= arr.length - 1;
+        while (l<r) {
+            char temp = arr[l];
+            arr[l] = arr[r];
+            arr[r] = temp;
+            l++;
+            r--;
+        }
+        System.out.println(new String(arr));
+    }
+}
+Input	Output
+fdsrd	drsdf
+
+B - Odd even index
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        for (int i = 1; i < s.length(); i += 2) {
+            System.out.print(s.charAt(i));
+        }
+        for (int i = 0; i < s.length(); i += 2) {
+            System.out.print(s.charAt(i));
+        }
+}
+}
+Input	Output
+afdg5tg	fgtad5g
+
+C - Occurrence of a character
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String sentence = sc.nextLine();
+        char ch = sc.next().charAt(0);
+        int count = 0;
+        for (int i = 0;i<sentence.length(); i++) {
+            if (sentence.charAt(i) == ch) {
+                count++;
+            }
+        }
+        System.out.println(count);
+    }}
+D - Vowels in a string
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        boolean allVowels = true;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (!(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+                  c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')) {
+                allVowels = false;
+                break;
+            }
+        }
+        if (allVowels) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+    }
+}
+E - Digits in a string
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        boolean allDigits = true;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c < '0' || c > '9') {
+                allDigits = false;
+                break;
+            }
+        }
+        if (allDigits) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+    }
+}
+F - Count vowels and consonants
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        int vowels = 0, consonants = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            char lower = Character.toLowerCase(c);
+
+            if (lower >= 'a' && lower <= 'z') { 
+                if (lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u') {
+                    vowels++;
+                } else {
+                    consonants++;
+                }
+            }
+        }
+        System.out.println(vowels + " " + consonants);
+    }
+}
+
